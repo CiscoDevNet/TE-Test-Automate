@@ -56,7 +56,6 @@ def create_tests(headers, source_agent, target_agents):
             payload["testName"] = 'FROM ' + source_agent[0]['location'] + ' TO ' + target_agent['location']
             payload["targetAgentId"] = target_agent['agentId']
             json_object = json.dumps(payload)
-            print(json_object)
             resp = requests.post(url=base_url+"/tests/agent-to-agent/new.json", headers=headers, data=json_object)
             print(resp.content)
 
